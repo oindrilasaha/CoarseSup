@@ -52,7 +52,7 @@ parser.add_argument('--posterior_ckpt', default=None, type=str,
                     help='path to posterior model checkpoint')     
 parser.add_argument('-j', '--workers', default=16, type=int, metavar='N',
                     help='number of data loading workers (default: 4)')
-parser.add_argument('--epochs', default=90, type=int, metavar='N',
+parser.add_argument('--epochs', default=40, type=int, metavar='N',
                     help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
@@ -627,7 +627,7 @@ def validate(val_loader_cub, val_loader_pascal,
 
 def save_checkpoint(state, is_best, filename='*_checkpoint.pth.tar'):
     work_dir = os.path.basename(os.path.dirname(os.path.realpath(__file__))) + args.exp_name
-    save_dir = os.path.join('./checkpoints_joint_', work_dir)
+    save_dir = os.path.join('./checkpoints_', work_dir)
     cine(save_dir)
     epoch = str(state['epoch'])
     filename = filename.replace('*', epoch)
