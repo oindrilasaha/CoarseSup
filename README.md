@@ -26,7 +26,7 @@ and extract images into single folder by:
 
 ```
 cd <path to cub data>/images/ 
-for folder in *; do; mv $folder/* ../images_extracted/.; done
+for folder in *; do cp $folder/* ../images_extracted/.; done
 ```
 
 -> Download pretained checkpoints from [here](https://drive.google.com/drive/folders/1EqAiUKdKc_jF-DaTWyCWHh7h6KNEU7UJ?usp=sharing) into checkpoints_pretrained folder inside current folder
